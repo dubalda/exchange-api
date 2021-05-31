@@ -80,7 +80,7 @@ for cont in range(0, cont_quarter):
 
 
 grid_low_price = int(0.96 * start_price)
-grid_high_price = int(0.9999 * start_price)
+grid_high_price = int(0.99 * start_price)
 grid_step = (grid_high_price - grid_low_price) // cont_quarter
 print(">>> Grid 1%-4%:", cont_quarter, "CONT from ", grid_low_price, " to ", grid_high_price, " with step ", grid_step)
 for cont in range(0, cont_quarter):
