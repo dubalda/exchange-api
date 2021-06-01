@@ -1,4 +1,4 @@
-# exchange-api
+# exchange-api for Binance COIN-M futurers / Huobi Coin Swaps
 
 1/4 депозита -13%..-33% MA25
 1/4 депозита: -5%..-12% MA25

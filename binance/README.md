@@ -1,4 +1,4 @@
-# Binance
+# Binance COIN-M Futures
 
 https://binance-docs.github.io/apidocs/delivery/en/#general-info
 
