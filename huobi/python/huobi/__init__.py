@@ -39,9 +39,14 @@ def swap_openorders(contract_code: 'str'):
 
 def swap_mark_price_kline(contract_code: 'str', period: 'str', size: 'str'):
     body = {"contract_code":contract_code}
-    method = 'POST'
+    method = 'GET'
     endpoint = '/swap-api/v1/swap_mark_price_kline'
-    url = build_url(method, endpoint)
+    params = urlencode({'contract_code': contract_code,
+                    'period': period,
+                    'size': size
+                   })
+    pre_signed_text = method + '\n' + base_uri + '\n' + endpoint + '\n' + params
+    url = 'https://' + base_uri + endpoint + '?' + params + '&' + signature(pre_signed_text)
     response = requests.request(method, url)
     swap_openorders = json.loads(response.text)
     print(swap_openorders)
