@@ -7,13 +7,13 @@ from urllib.parse import urlencode
 from datetime import datetime
 import os
 
-global AccessKeyId
-global SecretKey
-global timestamp
-global params
-global base_uri
-
 def init():
+  global AccessKeyId
+  global SecretKey
+  global timestamp
+  global params
+  global base_uri
+
   #Get all Accounts of the Current User
   AccessKeyId = os.environ.get('accessKey')
   SecretKey = os.environ.get('secretKey')
@@ -28,7 +28,7 @@ def init():
 
 def swap_openorders(contract_code: 'str'):
     init()
-    body = {"contract_code":contract_code   }
+    body = {"contract_code":contract_code}
     method = 'POST'
     endpoint = '/swap-api/v1/swap_openorders'
     pre_signed_text = method + '\n' + base_uri + '\n' + endpoint + '\n' + params
