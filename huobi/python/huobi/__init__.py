@@ -49,5 +49,6 @@ def swap_mark_price_kline(contract_code: 'str', period: 'str', size: 'str'):
     url = 'https://' + base_uri + endpoint + '?' + params + '&' + signature(pre_signed_text)
     response = requests.request(method, url)
     swap_openorders = json.loads(response.text)
-    print(swap_openorders)
+    #print(swap_openorders)
+    return swap_openorders['data'][0]['low']
 
