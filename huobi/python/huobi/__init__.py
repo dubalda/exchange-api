@@ -52,3 +52,27 @@ def swap_mark_price_kline(contract_code: 'str', period: 'str', size: 'str'):
     #print(swap_openorders)
     return swap_openorders['data'][0]['low']
 
+def swap_order(contract_code: 'str', price: 'str'):
+    # open long: direction - buy, offset - open
+    # close long: direction -sell, offset - close
+    # open short: direction -sell, offset - open
+    # close short: direction -buy, offset - close
+    body = {"contract_code":contract_code,
+            "price":price,"volume":"1",
+            "direction":"buy",
+            "offset":"open",
+            "lever_rate":"2",
+            "order_price_type":"limit"}
+    method = 'POST'
+    endpoint = '/swap-api/v1/swap_order'
+    timestamp = str(datetime.utcnow().isoformat())[0:19]
+    params = urlencode({'AccessKeyId': AccessKeyId,
+                    'SignatureMethod': 'HmacSHA256',
+                    'SignatureVersion': '2',
+                    'Timestamp': timestamp
+                   })
+    pre_signed_text = method + '\n' + base_uri + '\n' + endpoint + '\n' + params
+    url = 'https://' + base_uri + endpoint + '?' + params + '&' + signature(pre_signed_text)
+    response = requests.request(method, url, json = body)
+    swap_openorders = json.loads(response.text)
+    print(swap_openorders)
