@@ -40,7 +40,7 @@ def swap_openorders(contract_code: 'str'):
 def swap_mark_price_kline(contract_code: 'str', period: 'str', size: 'str'):
     body = {"contract_code":contract_code}
     method = 'GET'
-    endpoint = '/swap-api/v1/swap_mark_price_kline'
+    endpoint = '/index/market/history/swap_mark_price_kline'
     params = urlencode({'contract_code': contract_code,
                     'period': period,
                     'size': size
