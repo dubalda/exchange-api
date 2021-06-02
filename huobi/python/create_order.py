@@ -48,5 +48,30 @@ for cont in range(0, cont_quarter):
   huobi.swap_order(contract_code = contract_code, price = next_price)
 
 
+grid_low_price = int(0.88 * start_price)
+grid_high_price = int(0.95 * start_price)
+grid_step = (grid_high_price - grid_low_price) // cont_quarter
+print(">>> Grid 5%-12%:", cont_quarter, "CONT from ", grid_low_price, " to ", grid_high_price, " with step ", grid_step)
+for cont in range(0, cont_quarter):
+  time.sleep(0.01)
+  next_price = grid_low_price + (cont * grid_step)
+  print(">>> Grid 5%-12%, CONT", cont, ": Price", next_price)
+  huobi.swap_order(contract_code = contract_code, price = next_price)
+
+
+grid_low_price = int(0.96 * start_price)
+grid_high_price = int(0.99 * start_price)
+grid_step = (grid_high_price - grid_low_price) // cont_quarter
+print(">>> Grid 1%-4%:", cont_quarter, "CONT from ", grid_low_price, " to ", grid_high_price, " with step ", grid_step)
+for cont in range(0, cont_quarter):
+  time.sleep(0.01)
+  next_price = grid_low_price + (cont * grid_step)
+  print(">>> Grid 1%-4%, CONT", cont, ": Price", next_price)
+  huobi.swap_order(contract_code = contract_code, price = next_price)
+
+
+
+
+
 print("DONE")
 print("==========================")
