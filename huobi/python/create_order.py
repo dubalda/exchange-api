@@ -1,5 +1,4 @@
 import os
-import huobi
 from datetime import datetime
 from urllib.parse import urlencode
 
@@ -14,5 +13,6 @@ params = urlencode({'AccessKeyId': AccessKeyId,
                    })
 base_uri = 'api.hbdm.vn'
 
+import huobi
 
 huobi.swap_openorders('btc-usd')
