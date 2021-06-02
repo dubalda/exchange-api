@@ -74,5 +74,3 @@ def swap_order(contract_code: 'str', price: 'str'):
     pre_signed_text = method + '\n' + base_uri + '\n' + endpoint + '\n' + params
     url = 'https://' + base_uri + endpoint + '?' + params + '&' + signature(pre_signed_text)
     response = requests.request(method, url, json = body)
-    swap_openorders = json.loads(response.text)
-    print(swap_openorders)
