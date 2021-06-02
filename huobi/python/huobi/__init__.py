@@ -51,4 +51,3 @@ def swap_mark_price_kline(contract_code: 'str', period: 'str', size: 'str'):
     swap_openorders = json.loads(response.text)
     print(swap_openorders)
 
-
