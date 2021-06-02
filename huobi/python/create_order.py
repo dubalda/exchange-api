@@ -17,7 +17,8 @@ params = urlencode({'AccessKeyId': AccessKeyId,
                     'SignatureVersion': '2',
                     'Timestamp': timestamp
                    })
-body = {"contract_code":"btc-usd"}
+contract_code = 'btc-usd'
+body = {"contract_code":contract_code}
 method = 'POST'
 endpoint = '/swap-api/v1/swap_openorders'
 base_uri = 'api.hbdm.vn'
