@@ -63,7 +63,7 @@ for cont in range(1, cont_total + 1):
   time.sleep(0.02)
   next_price = grid_low_price + (cont * grid_step)
   print(">>> CONT", cont, ": Price", next_price)
-  #result = request_client.post_order(symbol="BTCUSD_PERP", side=OrderSide.BUY, ordertype=OrderType.LIMIT, price=next_price, quantity=1, timeInForce=TimeInForce.GTC)
+  result = request_client.post_order(symbol="BTCUSD_PERP", side=OrderSide.BUY, ordertype=OrderType.LIMIT, price=next_price, quantity=1, timeInForce=TimeInForce.GTC)
 
 
 # Get all orders
