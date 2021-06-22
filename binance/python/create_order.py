@@ -69,13 +69,13 @@ for cont in range(1, low_cont_total + 1):
   time.sleep(0.02)
   next_price = low_price + (cont * low_grid_step)
   print(">>> CONT", cont, ": Price", next_price)
-  #result = request_client.post_order(symbol="BTCUSD_PERP", side=OrderSide.BUY, ordertype=OrderType.LIMIT, price=next_price, quantity=1, timeInForce=TimeInForce.GTC)
+  result = request_client.post_order(symbol="BTCUSD_PERP", side=OrderSide.BUY, ordertype=OrderType.LIMIT, price=next_price, quantity=1, timeInForce=TimeInForce.GTC)
 
 for cont in range(1, high_cont_total + 1):
   time.sleep(0.02)
   next_price = mid_price + (cont * high_grid_step)
   print(">>> CONT", cont, ": Price", next_price)
-  #result = request_client.post_order(symbol="BTCUSD_PERP", side=OrderSide.BUY, ordertype=OrderType.LIMIT, price=next_price, quantity=1, timeInForce=TimeInForce.GTC)
+  result = request_client.post_order(symbol="BTCUSD_PERP", side=OrderSide.BUY, ordertype=OrderType.LIMIT, price=next_price, quantity=1, timeInForce=TimeInForce.GTC)
 
 # Get all orders
 #result = request_client.get_all_orders(symbol="BTCUSD_PERP")
