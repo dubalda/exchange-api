@@ -1,5 +1,0 @@
-requests
-apscheduler
-websocket-client
-urllib3
-tzlocal<3.0
